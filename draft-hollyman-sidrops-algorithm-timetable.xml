@@ -5,7 +5,7 @@
 <!ENTITY milestone1-date2 "2026-12-31">
 <!ENTITY milestone2-name "CA Ready Algorithm B Date">
 <!ENTITY milestone2-date "2027-02-01">
-<!ENTITY milestone3-name "CA Go ALgorithm B Date">
+<!ENTITY milestone3-name "CA Go Algorithm B Date">
 <!ENTITY milestone3-date "2027-07-01">
 <!ENTITY milestone4-name "RP Ready Algorithm B Date">
 <!ENTITY milestone4-date "2027-12-31">
@@ -29,6 +29,8 @@
 <rfc xmlns:xi="http://www.w3.org/2001/XInclude"
     category="bcp"
     ipr="trust200902"
+    submissionType="IETF"
+    consensus="true"
     docName="draft-hollyman-sidrops-rpki-algorithm-timetable-latest">
 
 <front>
@@ -95,7 +97,7 @@
                 <t hangText="Algorithm Suite A:">The "current" algorithm suite used for hashing and signing.</t>
 		<t hangText="Algorithm Suite B:">The "next" algorithm suite used for hashing and signing.</t>
 		<t hangText="CA Ready Algorithm B Date:">After this date, all non-leaf CAs MUST be ready to process a request from a child CA to issue a certificate under the Algorithm Suite B. All CAs publishing an <xref target="RFC6485"/> Trust Anchor Locator (TAL) for Algorithm Suite A MUST also publish the correspondent TAL for Algorithm Suite B.</t>
-		<t hangText="CA Go Algorithm B Date:">After this date, all CAs MUST have reissued all their signed product sets under ALgorithm Suite B.</t>
+		<t hangText="CA Go Algorithm B Date:">After this date, all CAs MUST have reissued all their signed product sets under lLgorithm Suite B.</t>
 		<t hangText="RP Ready Algorithm B Date:">After this date, all RPs MUST be prepared to process signed material issued under Algorithm Suite B.</t>
 		<t hangText="Twilight Date:">After this date, a CA MAY cease issuing signed products under Algorithm Suite A. Also, after this date, an RP MAY cease to validate signed materials issued under Algorithm Suite A.</t>
 		<t hangText="End-Of-Life (EOL) Date:">After this date, Algorithm Suite A MUST be deprecated using the process in Section 10 of <xref target="RFC6916"/> and all Algorithm Suite A TALs MUST be removed from their publication points.</t>
@@ -106,7 +108,7 @@
 <section anchor="suite" title="Algorithm Suite">
   <t>The algorithm suite transition this document defines the timetable for are listed here as Algorithm Suite A and Algorithm Suite B defined in <xref target="RFC6485"/>. </t>
 <!--  <list hangIndent="4" style="symbols"> -->
-    <section anchor="suiteA" title="Algorithm Suite A">
+    <section anchor="suiteA" title="Algorithm Suite A (from RFC6485)">
     <list hangIndent="8" style="symbols">
       <t>The signature algorithm used in certificates, CRLs, and signed
          objects is RSA Public-Key Cryptography Standards (PKCS) #1
@@ -135,7 +137,7 @@
     <section anchor="suiteB" title="Algorithm Suite B">
       <!-- Insert new list of algorithms here
       <list hangIndent="8" style="symbols">
-	<t>New ALgorithms</t>
+	<t>New Algorithms</t>
       </list> -->
     </section>
 </section>
@@ -144,7 +146,7 @@
   <t>Dates in this timetable MAY be adjusted when the community shows that an adverse effect is likely to take place without an extension. A date change requires a re-publication of this document with an update to the transation log in the appendix section. The re-publication MUST be advertised broadly to all RPs and CAs.</t>
     <section title="Timetable">
             <texttable title="RPKI Algorithm Suite Transition Timetable">
-                <preamble>The transition phases and timelines to a new Algorithm Suite in RPKI. If a phase schedule cannot be met, the timetable must be adjusted to reflect a new set of dates.</preamble>
+                <preamble>The transition phases and timelines to a new Algorithm Suite in RPKI. If a phase schedule cannot be met, the timetable MUST be adjusted to reflect a new set of dates.</preamble>
                 <ttcol align='center'>Phase </ttcol>
                 <ttcol align='left'>Name</ttcol>
 		<ttcol align='center'>Target Date</ttcol>
@@ -173,8 +175,8 @@
     </section>
 
     <section anchor="Security" title="Security Considerations">
-      <t>Algorithm transitions in RPKI should be infrequent events with wide community consensus. This document does not address algorithm security or weakness. However, an algorithm suite change addressed in the timetable defined in this document may expose CAs and RPs to a vulnerable state from maintaining and running software requiring dual-algorithm support for an extended period of time.</t>
-      <t>Any CA unable to complete its migration to the new algorithm suite by the End-Of-Life date will no longer have a signed product set validated by RPs. A CA without a validated, signed product set, will expose objects that were formerly VALID in RPKI as now UNKNOWN. These RPKI ROA objects may be targets of BGP hijacking until the CA is able to produce a signed product set using the new algorithm suite B. The community is strongly encouraged to monitor the transition process and use all possible mechanisms to ensure complete compliance with the new algorithm before the EOL date.</t>
+      <t>Algorithm transitions in RPKI should be infrequent events with broad community consensus. This document does not address algorithm security or weakness. However, an algorithm suite change addressed in the timetable defined in this document may expose CAs and RPs to a vulnerable state from maintaining and running software requiring dual-algorithm support for an extended period of time.</t>
+      <t>Any CA unable to complete its migration to the new algorithm suite by the End-Of-Life date will no longer have a signed product set to be validated by RPs. A CA without a validated, signed product set, will expose objects that were formerly VALID in RPKI to UNKNOWN. These RPKI objects may be targets of BGP hijacking until the CA is able to produce a signed product set using algorithm suite B. The community is strongly encouraged to monitor the transition process and use all possible mechanisms to ensure complete compliance with the new algorithm before the EOL date.</t>
     </section>
 </middle>
 
@@ -193,16 +195,16 @@
     </references>
 
     <section anchor="date-history" title="Timetable Change History">
-        <t>This section serves as a log for all timetable date changes. In an ideal
-	situation this section will have no entries. The only time an entry is to be
+        <t>This section provides a historical log of all timetable date changes. In an ideal
+	situation this section will have no entries beyond the original planned dates. The only time an entry is to be
 	made to this section is when a target date cannot be met and requires a new
-	date in the future.</t>
+	future date.</t>
 	<section anchor="milestone1-history" title="Changes to: &milestone1-name;">
 	  <!-- <list style="format %d." hangIndent="4"> -->
 	  <ol>
 	    <li>Original date: &milestone1-date;</li>
 	    <li>Current date: &milestone1-date2;</li>
-	    <li>Original request was from RIPE NCC.</li>
+	    <li>Justification:</li>
 	  </ol>
 	</section>
 	<section anchor="milestone2-history" title="Changes to: &milestone2-name;">

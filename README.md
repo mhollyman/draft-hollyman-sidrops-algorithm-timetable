@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <!-- regenerate: on (set to off if you edit this file) -->
 
 # RPKI algorithm Transition
@@ -33,4 +32,3 @@ Command line usage requires that you have the necessary software installed.  See
 =======
 # draft-hollyman-sidrops-algorithm-timetable
 IETF SIDROPS Draft of a timetable for transitioning to a new encryption suite. 
->>>>>>> ab0158db5f02a4d3e08771e0a2a33eb34714afd5
