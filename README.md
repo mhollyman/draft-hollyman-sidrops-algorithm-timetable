@@ -5,7 +5,7 @@
 
 This is the working area for the individual Internet-Draft, "RPKI algorithm Transition".
 
-* [Editor's Copy](https://mhollyman.github.io/draft-hollyman-sidrops-pqc-transition/#go.draft-hollyman-sidrops-rpki-pqc-transition.html)
+* [Editor's Copy](https://mhollyman.github.io/draft-hollyman-sidrops-algorithm-timetable/#go.draft-hollyman-sidrops-rpki-algorithm-timetable.html)
 * [Datatracker Page](https://datatracker.ietf.org/doc/draft-hollyman-sidrops-algorithm-timetable)
 * [Individual Draft](https://datatracker.ietf.org/doc/html/draft-hollyman-sidrops-algorithm-timetable)
 * [Compare Editor's Copy to Individual Draft](https://mhollyman.github.io/draft-hollyman-sidrops-algorithm-timetable #go.draft-hollyman-sidrops-algorithm-timetable.diff)

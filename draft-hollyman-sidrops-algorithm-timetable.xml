@@ -29,7 +29,7 @@
 <rfc xmlns:xi="http://www.w3.org/2001/XInclude"
     category="bcp"
     ipr="trust200902"
-    docName="draft-hollyman-sidrops-rpki-pqc-transition-latest">
+    docName="draft-hollyman-sidrops-rpki-algorithm-timetable-latest">
 
 <front>
     <!-- The abbreviated title is used in the page header - it is only necessary if the 
