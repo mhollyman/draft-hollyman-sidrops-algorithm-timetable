@@ -8,13 +8,13 @@ This is the working area for the individual Internet-Draft, "RPKI PQC Transition
 * [Editor's Copy](https://mhollyman.github.io/draft-hollyman-sidrops-pqc-transition/#go.draft-hollyman-sidrops-rpki-pqc-transition.html)
 * [Datatracker Page](https://datatracker.ietf.org/doc/draft-hollyman-sidrops-algorithm-timetable)
 * [Individual Draft](https://datatracker.ietf.org/doc/html/draft-hollyman-sidrops-algorithm-timetable)
-* [Compare Editor's Copy to Individual Draft](https://mhollyman.github.io/draft-hollyman-sidrops-algorithm-timetable #go.draft-hollyman-sidrops-rpki-pqc-transition.diff)
+* [Compare Editor's Copy to Individual Draft](https://mhollyman.github.io/draft-hollyman-sidrops-algorithm-timetable #go.draft-hollyman-sidrops-algorithm-timetable.diff)
 
 
 ## Contributing
 
 See the
-[guidelines for contributions](https://github.com/mhollyman/draft-hollyman-sidrops-pqc-transition/blob/main/CONTRIBUTING.md).
+[guidelines for contributions](https://github.com/mhollyman/draft-hollyman-sidrops-algorithm-timetablen/blob/main/CONTRIBUTING.md).
 
 The contributing file also has tips on how to make contributions, if you
 don't already know how to do that.
