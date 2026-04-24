@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE rfc [
+<!ENTITY milestone1-name "Update RFC6916 with new Algorithm Suite">
+<!ENTITY milestone1-date "2026-10-31">
+<!ENTITY milestone1-date2 "2026-12-31">
+<!ENTITY milestone2-name "CA Ready Algorithm B Date">
+<!ENTITY milestone2-date "2027-02-01">
+<!ENTITY milestone3-name "CA Go ALgorithm B Date">
+<!ENTITY milestone3-date "2027-07-01">
+<!ENTITY milestone4-name "RP Ready Algorithm B Date">
+<!ENTITY milestone4-date "2027-12-31">
+<!ENTITY milestone5-name "Twilight Date">
+<!ENTITY milestone5-date "2028-10-31">
+<!ENTITY milestone5-name "End-Of-Life">
+<!ENTITY milestone5-date "2029-07-01">
+]>
+
+<?rfc sortrefs="yes"?>
+<?rfc subcompact="no"?>
+<?rfc symrefs="yes"?>
+<?rfc toc="yes"?>
+<?rfc tocdepth="3"?>
+<?rfc compact="yes"?>
+<?rfc subcompact="no"?>
+<?rfc tocompact="yes"?> <!-- If "yes" eliminates blank lines before main section entries. -->
+<?rfc strict="no" ?>
+
+
+<rfc xmlns:xi="http://www.w3.org/2001/XInclude"
+    category="bcp"
+    ipr="trust200902"
+    docName="draft-hollyman-sidrops-rpki-pqc-transition-latest">
+
+<front>
+    <!-- The abbreviated title is used in the page header - it is only necessary if the 
+         full title is longer than 42 characters -->
+    <title abbrev="RPKI Algorithm Suite Transition">RPKI Algorithm Suite Transition</title>
+
+    <!-- add 'role="editor"' below for the editors if appropriate -->
+    <author
+        fullname="Michael Hollyman" 
+        initials="M." 
+        surname="Hollyman">
+
+        <!-- abbrev not needed but can be used for the header
+             if the full organization name is too long -->
+        <organization abbrev="Verisign">Verisign</organization>
+        <address>
+            <postal>
+                <street/>
+                <city>Denver</city>
+		<region>Colorado</region>
+                <country>United States</country>
+            </postal>
+        <email>mhollyman@verisign.com</email>
+        </address>
+    </author>
+    
+    <!-- <date year="2026" month="April" day="13"/> --> <!-- month="March" is no longer necessary
+                                           note also, day="30" is optional -->
+    <!-- Meta-data Declarations -->
+    
+    <!-- Notice the use of &amp; as an escape for & which would otherwise
+         start an entity declaration, whereas we want a literal &. -->
+    <area>OPS</area>
+
+    <!-- WG name at the upperleft corner of the doc,
+         IETF fine for individual submissions.  You can also
+         omit this element in which case in defaults to "Network Working Group" -
+         a hangover from the ancient history of the IETF! -->
+    <workgroup>SIDROPS</workgroup>
+    
+    <abstract>
+        <t>This document specifies the mandatory algorithm transition timetable that defines dates for the milestones defined in RFC6916 <xref target="RFC6916"/>. The timelines for each phase of action in this document may be extended if certain criteria are not met, prior to each assigned date. Please consult the current version of this document for latest timeline dates.</t>
+    </abstract>
+
+    <note title="Requirements Language">
+      <t>
+        The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED", "NOT RECOMMENDED", "MAY", and "OPTIONAL" in this document are to be interpreted as described in BCP 14 <xref target="RFC2119"/> <xref target="RFC8174"/> when, and only when, they appear in all capitals, as shown here.
+      </t>
+    </note>
+
+</front>
+
+<middle>
+    <section title="Introduction">
+        <t>The Resource Public Key Infrastructure (RPKI) must accommodate transitions between public keys used by Certification Authorities (CAs). A less-common transition involves migrating to a new signature algorithm suite used by CAs and Relying Parties (RPs). The process to transition to a new, or additional algorithm, is expected to completed over a timescale of months or years. This process of transition is defined in <xref target="RFC6916"/>.</t>
+        <t>This document provides a timetable for the introduction of a new algorithm suite broken up into the four phases outlined in <xref target="RFC6916" section="4"/> section 4. The dates in each section of the timeline MAY be extended, but never shortened, if an upcoming date target is unable to be met. Any date changes MUST be logged in <xref target="date-history"/> as a list of changes with associated change date.</t>
+    </section>
+
+    <section title="Terminology">
+      <t>This document assumes that the reader is familiar with the terms and concepts describe in "Algorithm Agility Procedure for the Resource Public Key Infrastructure (RPKI)" <xref target="RFC6916"/>. For reference the following terms and conventions are provided:</t>
+      
+      <list hangIndent="8" style="hanging">
+                <t hangText="Algorithm Suite A:">The "current" algorithm suite used for hashing and signing.</t>
+		<t hangText="Algorithm Suite B:">The "next" algorithm suite used for hashing and signing.</t>
+		<t hangText="CA Ready Algorithm B Date:">After this date, all non-leaf CAs MUST be ready to process a request from a child CA to issue a certificate under the Algorithm Suite B. All CAs publishing an <xref target="RFC6485"/> Trust Anchor Locator (TAL) for Algorithm Suite A MUST also publish the correspondent TAL for Algorithm Suite B.</t>
+		<t hangText="CA Go Algorithm B Date:">After this date, all CAs MUST have reissued all their signed product sets under ALgorithm Suite B.</t>
+		<t hangText="RP Ready Algorithm B Date:">After this date, all RPs MUST be prepared to process signed material issued under Algorithm Suite B.</t>
+		<t hangText="Twilight Date:">After this date, a CA MAY cease issuing signed products under Algorithm Suite A. Also, after this date, an RP MAY cease to validate signed materials issued under Algorithm Suite A.</t>
+		<t hangText="End-Of-Life (EOL) Date:">After this date, Algorithm Suite A MUST be deprecated using the process in Section 10 of <xref target="RFC6916"/> and all Algorithm Suite A TALs MUST be removed from their publication points.</t>
+      </list>
+    </section>
+<!-- Possibly a 'Contributors' section ... -->
+
+<section anchor="suite" title="Algorithm Suite">
+  <t>The algorithm suite transition this document defines the timetable for are listed here as Algorithm Suite A and Algorithm Suite B defined in <xref target="RFC6485"/>. </t>
+<!--  <list hangIndent="4" style="symbols"> -->
+    <section anchor="suiteA" title="Algorithm Suite A">
+    <list hangIndent="8" style="symbols">
+      <t>The signature algorithm used in certificates, CRLs, and signed
+         objects is RSA Public-Key Cryptography Standards (PKCS) #1
+         Version 1.5 (sometimes referred to as "RSASSA-PKCS1-v1_5") from
+         Section 5 of [RFC4055].</t>
+
+      <t>The hashing algorithm used in certificates, CRLs, and signed
+         objects is SHA-256 [SHS].  The hashing algorithm is not
+         identified by itself when used in certificates and CRLs, as
+         they are combined with the digital signature algorithm (see
+         below).</t>
+
+      <t>When used in the Cryptographic Message Syntax (CMS) SignedData,
+         the hash algorithm (in this case, the hash algorithm is
+         sometimes called a message digest algorithm) is identified by
+         itself.  For CMS SignedData, the object identifier and
+         parameters for SHA-256 (as defined in [RFC5754]) MUST be used
+         when populating the digestAlgorithms and digestAlgorithm
+         fields.
+	 
+         NOTE: The exception to the above hashing algorithm is the use
+         of SHA-1 [SHS] when Certification Authorities (CAs) generate
+      authority and subject key identifiers [RFC6487].</t>
+    </list>
+    </section>
+    <section anchor="suiteB" title="Algorithm Suite B">
+      <!-- Insert new list of algorithms here
+      <list hangIndent="8" style="symbols">
+	<t>New ALgorithms</t>
+      </list> -->
+    </section>
+</section>
+<section anchor="timetable" title="Timetable">
+  <t>The following timetable is considered to be agreed-to by the community when this document is accepted as an RFC BCP. The dates for each phase will be agreed upon by the technical contacts at each of the five Regional Internet Registries (RIRs), along with a majority of CAs issuing RPKI products.</t>
+  <t>Dates in this timetable MAY be adjusted when the community shows that an adverse effect is likely to take place without an extension. A date change requires a re-publication of this document with an update to the transation log in the appendix section. The re-publication MUST be advertised broadly to all RPs and CAs.</t>
+    <section title="Timetable">
+            <texttable title="RPKI Algorithm Suite Transition Timetable">
+                <preamble>The transition phases and timelines to a new Algorithm Suite in RPKI. If a phase schedule cannot be met, the timetable must be adjusted to reflect a new set of dates.</preamble>
+                <ttcol align='center'>Phase </ttcol>
+                <ttcol align='left'>Name</ttcol>
+		<ttcol align='center'>Target Date</ttcol>
+                <c>Phase #0</c>
+                <c>&milestone1-name;</c>
+                <c>&milestone1-date;</c>
+                <c>Phase #1</c>
+                <c>&milestone2-name;</c>
+                <c>&milestone2-date;</c>
+		<c>Phase #2</c>
+		<c>&milestone3-name;</c>
+                <c>&milestone3-date;</c>
+		<c>Phase #3</c>
+		<c>&milestone4-name;</c>
+                <c>&milestone4-date;</c>
+		<c>Phase #4</c>
+		<c>&milestone5-name;</c>
+                <c>&milestone5-date;</c>
+                <postamble>The dates may be difficult to meet and must be monitored carefully.</postamble>
+            </texttable>
+    </section>  
+</section>
+  
+    <section anchor="IANA" title="IANA Considerations">
+        <t>This memo includes no request to IANA.</t>
+    </section>
+
+    <section anchor="Security" title="Security Considerations">
+      <t>Algorithm transitions in RPKI should be infrequent events with wide community consensus. This document does not address algorithm security or weakness. However, an algorithm suite change addressed in the timetable defined in this document may expose CAs and RPs to a vulnerable state from maintaining and running software requiring dual-algorithm support for an extended period of time.</t>
+      <t>Any CA unable to complete its migration to the new algorithm suite by the End-Of-Life date will no longer have a signed product set validated by RPs. A CA without a validated, signed product set, will expose objects that were formerly VALID in RPKI as now UNKNOWN. These RPKI ROA objects may be targets of BGP hijacking until the CA is able to produce a signed product set using the new algorithm suite B. The community is strongly encouraged to monitor the transition process and use all possible mechanisms to ensure complete compliance with the new algorithm before the EOL date.</t>
+    </section>
+</middle>
+
+<!--  *****BACK MATTER ***** -->
+<back>
+    <!-- References split to informative and normative -->
+    <references title="Normative References">
+      <xi:include href="https://bib.ietf.org/public/rfc/bibxml/reference.RFC.2119.xml"/>
+      <xi:include href="https://bib.ietf.org/public/rfc/bibxml/reference.RFC.8174.xml"/>
+      <xi:include href="https://bib.ietf.org/public/rfc/bibxml/reference.RFC.6916.xml"/>
+      <xi:include href="https://bib.ietf.org/public/rfc/bibxml/reference.RFC.6485.xml"/>
+
+        
+        <!-- Right back at the beginning we defined an entity which (we asserted) would contain
+             XML needed for a reference... this is where we use it. -->
+    </references>
+
+    <section anchor="date-history" title="Timetable Change History">
+        <t>This section serves as a log for all timetable date changes. In an ideal
+	situation this section will have no entries. The only time an entry is to be
+	made to this section is when a target date cannot be met and requires a new
+	date in the future.</t>
+	<section anchor="milestone1-history" title="Changes to: &milestone1-name;">
+	  <!-- <list style="format %d." hangIndent="4"> -->
+	  <ol>
+	    <li>Original date: &milestone1-date;</li>
+	    <li>Current date: &milestone1-date2;</li>
+	    <li>Original request was from RIPE NCC.</li>
+	  </ol>
+	</section>
+	<section anchor="milestone2-history" title="Changes to: &milestone2-name;">
+	  <ol>
+	    <li>Original date: &milestone2-date;</li>
+	  </ol>
+	</section>
+	<section anchor="milestone3-history" title="Changes to: &milestone3-name;">
+	  <ol>
+	    <li>Original date: &milestone3-date;</li>
+	  </ol>
+	</section>
+	<section anchor="milestone4-history" title="Changes to: &milestone4-name;">
+	  <ol>
+	    <li>Original date: &milestone4-date;</li>
+	  </ol>
+	</section>
+	<section anchor="milestone5-history" title="Changes to: &milestone5-name;">
+	  <ol>
+	    <li>Original date: &milestone5-date;</li>
+	  </ol>
+	</section>
+
+
+	<!-- <t><xref target="date_log" format="date1" /></t> -->
+    </section>
+
+</back>
+
+</rfc>
