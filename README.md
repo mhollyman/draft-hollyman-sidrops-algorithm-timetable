@@ -3,7 +3,7 @@
 
 # RPKI algorithm Transition
 
-This is the working area for the individual Internet-Draft, "RPKI PQC Transition".
+This is the working area for the individual Internet-Draft, "RPKI algorithm Transition".
 
 * [Editor's Copy](https://mhollyman.github.io/draft-hollyman-sidrops-pqc-transition/#go.draft-hollyman-sidrops-rpki-pqc-transition.html)
 * [Datatracker Page](https://datatracker.ietf.org/doc/draft-hollyman-sidrops-algorithm-timetable)
