@@ -73,7 +73,9 @@
     <workgroup>SIDROPS</workgroup>
     
     <abstract>
-        <t>This document specifies the mandatory algorithm transition timetable that defines dates for the milestones defined in RFC6916 <xref target="RFC6916"/>. The timelines for each phase of action in this document may be extended if certain criteria are not met, prior to each assigned date. Please consult the current version of this document for latest timeline dates.</t>
+        <t>This document specifies the mandatory algorithm transition timetable that defines dates for the milestones defined in RFC6916 <xref target="RFC6916"/>. 
+The timelines for each phase of action in this document may be extended if certain criteria are not met, prior to each assigned date. 
+Please consult the current version of this document for latest timeline dates.</t>
     </abstract>
 
     <note title="Requirements Language">
@@ -86,8 +88,13 @@
 
 <middle>
     <section title="Introduction">
-        <t>The Resource Public Key Infrastructure (RPKI) must accommodate transitions between public keys used by Certification Authorities (CAs). A less-common transition involves migrating to a new signature algorithm suite used by CAs and Relying Parties (RPs). The process to transition to a new, or additional algorithm, is expected to completed over a timescale of months or years. This process of transition is defined in <xref target="RFC6916"/>.</t>
-        <t>This document provides a timetable for the introduction of a new algorithm suite broken up into the four phases outlined in <xref target="RFC6916" section="4"/> section 4. The dates in each section of the timeline MAY be extended, but never shortened, if an upcoming date target is unable to be met. Any date changes MUST be logged in <xref target="date-history"/> as a list of changes with associated change date.</t>
+        <t>The Resource Public Key Infrastructure (RPKI) must accommodate transitions between public keys used by Certification Authorities (CAs). 
+A less-common transition involves migrating to a new signature algorithm suite used by CAs and Relying Parties (RPs). 
+The process to transition to a new, or additional algorithm, is expected to completed over a timescale of months or years. 
+This process of transition is defined in <xref target="RFC6916"/>.</t>
+        <t>This document provides a timetable for the introduction of a new algorithm suite broken up into the four phases outlined in <xref target="RFC6916" section="4"/> section 4. 
+The dates in each section of the timeline MAY be extended, but never shortened, if an upcoming date target is unable to be met. 
+Any date changes MUST be logged in <xref target="date-history"/> as a list of changes with associated change date.</t>
     </section>
 
     <section title="Terminology">
@@ -142,8 +149,11 @@
     </section>
 </section>
 <section anchor="timetable" title="Timetable">
-  <t>The following timetable is considered to be agreed-to by the community when this document is accepted as an RFC BCP. The dates for each phase will be agreed upon by the technical contacts at each of the five Regional Internet Registries (RIRs), along with a majority of CAs issuing RPKI products.</t>
-  <t>Dates in this timetable MAY be adjusted when the community shows that an adverse effect is likely to take place without an extension. A date change requires a re-publication of this document with an update to the transation log in the appendix section. The re-publication MUST be advertised broadly to all RPs and CAs.</t>
+  <t>The following timetable is considered to be agreed-to by the community when this document is accepted as an RFC BCP. 
+The dates for each phase will be agreed upon by the technical contacts at each of the five Regional Internet Registries (RIRs), along with a majority of CAs issuing RPKI products.</t>
+  <t>Dates in this timetable MAY be adjusted when the community shows that an adverse effect is likely to take place without an extension. 
+A date change requires a re-publication of this document with an update to the transation log in the appendix section. 
+The re-publication MUST be advertised broadly to all RPs and CAs.</t>
     <section title="Timetable">
             <texttable title="RPKI Algorithm Suite Transition Timetable">
                 <preamble>The transition phases and timelines to a new Algorithm Suite in RPKI. If a phase schedule cannot be met, the timetable MUST be adjusted to reflect a new set of dates.</preamble>
@@ -175,8 +185,13 @@
     </section>
 
     <section anchor="Security" title="Security Considerations">
-      <t>Algorithm transitions in RPKI should be infrequent events with broad community consensus. This document does not address algorithm security or weakness. However, an algorithm suite change addressed in the timetable defined in this document may expose CAs and RPs to a vulnerable state from maintaining and running software requiring dual-algorithm support for an extended period of time.</t>
-      <t>Any CA unable to complete its migration to the new algorithm suite by the End-Of-Life date will no longer have a signed product set to be validated by RPs. A CA without a validated, signed product set, will expose objects that were formerly VALID in RPKI to UNKNOWN. These RPKI objects may be targets of BGP hijacking until the CA is able to produce a signed product set using algorithm suite B. The community is strongly encouraged to monitor the transition process and use all possible mechanisms to ensure complete compliance with the new algorithm before the EOL date.</t>
+      <t>Algorithm transitions in RPKI should be infrequent events with broad community consensus. 
+This document does not address algorithm security or weakness. 
+However, an algorithm suite change addressed in the timetable defined in this document may expose CAs and RPs to a vulnerable state from maintaining and running software requiring dual-algorithm support for an extended period of time.</t>
+      <t>Any CA unable to complete its migration to the new algorithm suite by the End-Of-Life date will no longer have a signed product set to be validated by RPs. 
+A CA without a validated, signed product set, will expose objects that were formerly VALID in RPKI to UNKNOWN. 
+These RPKI objects may be targets of BGP hijacking until the CA is able to produce a signed product set using algorithm suite B. 
+The community is strongly encouraged to monitor the transition process and use all possible mechanisms to ensure complete compliance with the new algorithm before the EOL date.</t>
     </section>
 </middle>
 
@@ -195,10 +210,9 @@
     </references>
 
     <section anchor="date-history" title="Timetable Change History">
-        <t>This section provides a historical log of all timetable date changes. In an ideal
-	situation this section will have no entries beyond the original planned dates. The only time an entry is to be
-	made to this section is when a target date cannot be met and requires a new
-	future date.</t>
+        <t>This section provides a historical log of all timetable date changes. 
+In an ideal situation this section will have no entries beyond the original planned dates. 
+The only time an entry is to be made to this section is when a target date cannot be met and requires a new future date.</t>
 	<section anchor="milestone1-history" title="Changes to: &milestone1-name;">
 	  <!-- <list style="format %d." hangIndent="4"> -->
 	  <ol>
